@@ -1,0 +1,2 @@
+add_lunch_combo tsm_toroplus-user
+add_lunch_combo tsm_mako-user
