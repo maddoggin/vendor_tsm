@@ -69,22 +69,6 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/YouTube.apk:system/app/YouTube.apk \
     vendor/tsm/proprietary/common/app/SetupWizard.apk:system/app/SetupWizard.apk
 
-# init.d support
-#PRODUCT_COPY_FILES += \
-    vendor/tsm/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
-    vendor/tsm/proprietary/common/etc/init.d/01zipalign:system/etc/init.d/01zipalign \
-    vendor/tsm/proprietary/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
-    vendor/tsm/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-    vendor/tsm/proprietary/common/etc/init.d/05freemem:system/etc/init.d/05freemem \
-    vendor/tsm/proprietary/common/etc/init.d/06removecache:system/etc/init.d/06removecache \
-    vendor/tsm/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
-    vendor/tsm/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
-    vendor/tsm/proprietary/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
-    vendor/tsm/proprietary/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/tsm/proprietary/common/bin/sysinit:system/bin/sysinit \
-    vendor/tsm/proprietary/common/xbin/firstboot.sh:system/xbin/firstboot.sh \
-    vendor/tsm/proprietary/common/xbin/roottools.sh:system/xbin/roottools.sh
-
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
