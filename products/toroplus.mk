@@ -60,3 +60,11 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     Galaxy4
 
+#Inherit common packages for toroplus
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver \
+    Torch \
+    Stk \
+    clatd \
+    GNexusParts
+

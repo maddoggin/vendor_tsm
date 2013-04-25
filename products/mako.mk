@@ -65,5 +65,6 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Torch \
-    Stk
+    Stk \
+    clatd
 
