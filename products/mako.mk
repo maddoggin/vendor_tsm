@@ -23,7 +23,7 @@ PRODUCT_DEVICE := mako
 PRODUCT_MODEL := Nexus 4
 PRODUCT_MANUFACTURER := LGE
 
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=occam BUILD_FINGERPRINT=google/occam/mako:4.2.2/JDQ39/573038:user/release-keys PRIVATE_BUILD_DESC="occam-user 4.2.2 JDQ39 573038 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=occam BUILD_FINGERPRINT=google/occam/mako:4.2.2/JDQ39E/573038:user/release-keys PRIVATE_BUILD_DESC="occam-user 4.2.2 JDQ39E 573038 release-keys"
 
 
 # Inherit common build.prop overrides
@@ -50,7 +50,7 @@ PRODUCT_COPY_FILES +=  \
 
 
 # T-Mobile theme engine
--include vendor/tsm/products/themes_common.mk
+#include vendor/tsm/products/themes_common.mk
 
 # Optional packages
 #PRODUCT_PACKAGES += \
@@ -64,7 +64,6 @@ PRODUCT_COPY_FILES +=  \
 #Inherit common packages for mako
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
-    Torch \
     Stk \
     clatd
 

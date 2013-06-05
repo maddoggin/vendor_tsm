@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <favorites
   xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher">
-    <appwidget launcher:className="com.google.android.apps.ears.widget.EarsMusicWidgetProvider" launcher:packageName="com.google.android.apps.ears" launcher:screen="1" launcher:x="0" launcher:y="2" launcher:spanX="4" launcher:spanY="1" />
-    <appwidget launcher:className="com.android.settings.widget.SettingsAppWidgetProvider" launcher:packageName="com.android.settings" launcher:screen="1" launcher:x="0" launcher:y="3" launcher:spanX="4" launcher:spanY="1" />
+    <appwidget launcher:className="com.google.android.finsky.widget.consumption.NowPlayingWidgetProvider" launcher:packageName="com.android.vending" launcher:screen="1" launcher:x="0" launcher:y="0" launcher:spanX="4" launcher:spanY="4">
+        <extra launcher:key="type" launcher:value="all" />
+    </appwidget>
     <favorite launcher:className="com.android.camera.Camera" launcher:packageName="com.google.android.gallery3d" launcher:screen="2" launcher:x="0" launcher:y="3" />
     <favorite launcher:className="com.android.camera.Camera" launcher:packageName="com.android.gallery3d" launcher:screen="2" launcher:x="0" launcher:y="3" />
     <folder launcher:screen="2" launcher:x="3" launcher:y="3" launcher:title="@string/default_folder_name">
@@ -17,7 +18,10 @@
         <favorite launcher:className="com.android.calendar.AllInOneActivity" launcher:packageName="com.google.android.calendar" />
         <favorite launcher:className="com.google.android.apps.plus.phone.ConversationListActivity" launcher:packageName="com.google.android.apps.plus" />
     </folder>
-    <appwidget launcher:className="com.android.vending.MarketWidgetProvider" launcher:packageName="com.android.vending" launcher:screen="3" launcher:x="1" launcher:y="1" launcher:spanX="2" launcher:spanY="2" />
+    <favorite launcher:className="com.android.vending.AssetBrowserActivity" launcher:packageName="com.android.vending" launcher:screen="2" launcher:x="3" launcher:y="3" />
+    <appwidget launcher:className="com.google.android.finsky.widget.recommendation.RecommendedWidgetProvider" launcher:packageName="com.android.vending" launcher:screen="3" launcher:x="0" launcher:y="0" launcher:spanX="4" launcher:spanY="2">
+        <extra launcher:key="type" launcher:value="all" />
+    </appwidget>
     <favorite launcher:className="com.android.gallery3d.app.Gallery" launcher:packageName="com.android.gallery3d" launcher:screen="3" launcher:x="1" launcher:y="3" />
     <favorite launcher:className="com.android.gallery3d.app.Gallery" launcher:packageName="com.google.android.gallery3d" launcher:screen="3" launcher:x="1" launcher:y="3" />
     <favorite launcher:className="com.android.settings.Settings" launcher:packageName="com.android.settings" launcher:screen="3" launcher:x="2" launcher:y="3" />

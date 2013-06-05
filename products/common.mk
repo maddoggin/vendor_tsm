@@ -29,6 +29,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/OneTimeInitializer.apk:system/app/OneTimeInitializer.apk \
     vendor/tsm/proprietary/common/app/Phonesky.apk:system/app/Phonesky.apk \
     vendor/tsm/proprietary/common/app/PlusOne.apk:system/app/PlusOne.apk \
+    vendor/tsm/proprietary/common/app/pl.solidexplorer-1.apk:system/app/pl.solidexplorer-1.apk \
     vendor/tsm/proprietary/common/app/Street.apk:system/app/Street.apk \
     vendor/tsm/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
     vendor/tsm/proprietary/common/app/Talk.apk:system/app/Talk.apk \
@@ -45,6 +46,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/libgtalk_stabilize.so:system/lib/libgtalk_stabilize.so \
     vendor/tsm/proprietary/common/lib/libgoggles_clientvision.so:system/lib/libgoggles_clientvision.so \
     vendor/tsm/proprietary/common/lib/libgoogle_recognizer_jni_l.so:system/lib/libgoogle_recognizer_jni_l.so \
+    vendor/tsm/proprietary/common/lib/libvcdecoder_jni.so:system/lib/libvcdecoder_jni.so \
     vendor/tsm/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/tsm/proprietary/common/lib/libjni_eglfence.so:system/lib/libjni_eglfence.so \
     vendor/tsm/proprietary/common/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
@@ -60,10 +62,25 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/libvoicesearch.so:system/lib/libvoicesearch.so \
     vendor/tsm/proprietary/common/lib/libvorbisencoder.so:system/lib/libvorbisencoder.so \
     vendor/tsm/proprietary/common/lib/libWVphoneAPI.so:system/lib/libWVphoneAPI.so \
-    vendor/tsm/proprietary/common/xbin/su:system/xbin/su
+    vendor/tsm/proprietary/common/xbin/su:system/xbin/su\
+    vendor/tsm/proprietary/common/lib/libplus_jni_v8.so:system/lib/libplus_jni_v8.so \
+    vendor/tsm/proprietary/common/lib/librs.antblur.so:system/lib/librs_antblur.so \
+    vendor/tsm/proprietary/common/lib/librs.antblur_constant.so:system/lib/librs.antblur_constant.so \
+    vendor/tsm/proprietary/common/lib/librs.antblur_drama.so:system/lib/librs.antblur_drama.so \
+    vendor/tsm/proprietary/common/lib/librs.drama.so:system/lib/librs.drama.so \
+    vendor/tsm/proprietary/common/lib/librs.film_base.so:system/lib/librs.film_base.so \
+    vendor/tsm/proprietary/common/lib/librs.fixedframe.so:system/lib/librs.fixedframe.so \
+    vendor/tsm/proprietary/common/lib/librs.grey.so:system/lib/librs.grey.so \
+    vendor/tsm/proprietary/common/lib/librs.image_wrapper.so:system/lib/librs.image_wrapper.so \
+    vendor/tsm/proprietary/common/lib/librs.retrolux.so:system/lib/librs.retrolux.so \
+    vendor/tsm/proprietary/common/lib/librsjni.so:system/lib/librsjni.so \
+    vendor/tsm/proprietary/common/lib/libRSSupport.so:system/lib/libRSSupport.so \
+    vendor/tsm/proprietary/common/lib/libwebp_android.so:system/lib/libwebp_android.so
+
 
 # Blobs common to all devices except emulator
 PRODUCT_COPY_FILES += \
+    vendor/tsm/proprietary/common/app/GenieWidget.apk:system/app/GenieWidget.apk \
     vendor/tsm/proprietary/common/app/Music2.apk:system/app/Music2.apk \
     vendor/tsm/proprietary/common/app/Videos.apk:system/app/Videos.apk \
     vendor/tsm/proprietary/common/app/YouTube.apk:system/app/YouTube.apk \
