@@ -21,7 +21,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/GoogleServicesFramework.apk:system/app/GoogleServicesFramework.apk \
     vendor/tsm/proprietary/common/app/GoogleTTS.apk:system/app/GoogleTTS.apk \
     vendor/tsm/proprietary/common/app/GmsCore.apk:system/app/GmsCore.apk \
-    vendor/tsm/proprietary/common/app/LatinImeGoogle.apk:system/app/LatinImeGoogle.apk \
+    vendor/tsm/proprietary/common/app/GoogleKeyboard.apk:system/app/GoogleKeyboard.apk \
     vendor/tsm/proprietary/common/app/LatinImeDictionaryPack.apk:system/app/LatinImeDictionaryPack.apk \
     vendor/tsm/proprietary/common/app/Maps.apk:system/app/Maps.apk \
     vendor/tsm/proprietary/common/app/MediaUploader.apk:system/app/MediaUploader.apk \
@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/OneTimeInitializer.apk:system/app/OneTimeInitializer.apk \
     vendor/tsm/proprietary/common/app/Phonesky.apk:system/app/Phonesky.apk \
     vendor/tsm/proprietary/common/app/PlusOne.apk:system/app/PlusOne.apk \
-    vendor/tsm/proprietary/common/app/pl.solidexplorer-1.apk:system/app/pl.solidexplorer-1.apk \
+    vendor/tsm/proprietary/common/app/pl.solidexplorer-2.apk:system/app/pl.solidexplorer-2.apk \
     vendor/tsm/proprietary/common/app/Street.apk:system/app/Street.apk \
     vendor/tsm/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
     vendor/tsm/proprietary/common/app/Talk.apk:system/app/Talk.apk \
@@ -40,6 +40,8 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/etc/preferred-apps/google.xml:system/etc/preferred-apps/google.xml \
     vendor/tsm/proprietary/common/etc/updatecmds/google_generic_update.txt:system/etc/updatecmds/google_generic_update.txt \
     vendor/tsm/proprietary/common/framework/com.google.android.maps.jar:system/framework/com.google.android.maps.jar \
+    vendor/tsm/proprietary/common/lib/libAppDataSearch.so:system/lib/libAppDataSearch.so \
+    vendor/tsm/proprietary/common/lib/libgames_rtmp_jni.so:system/lib/libgames_rtmp_jni.so \
     vendor/tsm/proprietary/common/lib/libfilterpack_imageproc.so:system/lib/libfilterpack_imageproc.so \
     vendor/tsm/proprietary/common/lib/libgcomm_jni.so:system/lib/libgcomm_jni.so \
     vendor/tsm/proprietary/common/lib/libgtalk_jni.so:system/lib/libgtalk_jni.so \
@@ -47,7 +49,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/libgoggles_clientvision.so:system/lib/libgoggles_clientvision.so \
     vendor/tsm/proprietary/common/lib/libgoogle_recognizer_jni_l.so:system/lib/libgoogle_recognizer_jni_l.so \
     vendor/tsm/proprietary/common/lib/libvcdecoder_jni.so:system/lib/libvcdecoder_jni.so \
-    vendor/tsm/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
+    vendor/tsm/proprietary/common/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so \
     vendor/tsm/proprietary/common/lib/libjni_eglfence.so:system/lib/libjni_eglfence.so \
     vendor/tsm/proprietary/common/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
     vendor/tsm/proprietary/common/lib/liblightcycle.so:system/lib/liblightcycle.so \

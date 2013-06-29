@@ -11,6 +11,6 @@ $(call inherit-product-if-exists, frameworks/base/data/videos/VideoPackage2.mk)
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Themos.ogg \
-    ro.config.notification_sound=Tejat.ogg \
+    ro.config.ringtone=Ring_Synth_04.ogg \
+    ro.config.notification_sound=Deneb.ogg \
     ro.config.alarm_alert=Oxygen.ogg

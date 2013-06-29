@@ -50,20 +50,20 @@ PRODUCT_COPY_FILES +=  \
 
 
 # T-Mobile theme engine
-#include vendor/tsm/products/themes_common.mk
+include vendor/tsm/products/themes_common.mk
 
 # Optional packages
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     VideoEditor \
     HoloSpiralWallpaper \
     LiveWallpapersPicker \
     NoiseField \
-    PhaseBeam \
-    Galaxy4
+    PhaseBeam
 
 #Inherit common packages for mako
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Stk \
+    Torch \
     clatd
 

@@ -65,6 +65,4 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Torch \
     Stk \
-    clatd \
-    GNexusParts
-
+    clatd
