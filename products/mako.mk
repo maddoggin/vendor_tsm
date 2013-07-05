@@ -1,11 +1,14 @@
 ## Specify phone tech before including full_phone
-#$(call inherit-product, vendor/tsm/products/gsm.mk)
-
-# Inherit AOSP device configuration for mako.
-$(call inherit-product, device/lge/mako/full_mako.mk)
+$(call inherit-product, vendor/tsm/products/gsm.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/tsm/products/common.mk)
+
+# Inherit common build.prop overrides
+-include vendor/tsm/products/common_versions.mk
+
+# Inherit AOSP device configuration for mako.
+$(call inherit-product, device/lge/mako/full_mako.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -25,15 +28,14 @@ PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=occam BUILD_FINGERPRINT=google/occam/mako:4.2.2/JDQ39E/573038:user/release-keys PRIVATE_BUILD_DESC="occam-user 4.2.2 JDQ39E 573038 release-keys"
 
-
-# Inherit common build.prop overrides
--include vendor/tsm/products/common_versions.mk
-
 # Copy mako specific prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/tsm/proprietary/mako/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/tsm/proprietary/mako/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
-    vendor/tsm/proprietary/common/app/Wallet.apk:system/app/Wallet.apk
+    vendor/tsm/proprietary/common/app/Wallet.apk:system/app/Wallet.apk \
+    vendor/tsm/proprietary/common/app/Chrome.apk:system/app/Chrome.apk \
+    vendor/tsm/proprietary/common/lib/libchromeview.so:system/lib/libchromeview.so
+
 
 
 # Inherit media effect blobs
@@ -48,7 +50,6 @@ PRODUCT_COPY_FILES +=  \
 # Inherit speech recognition blobs
 -include vendor/tsm/products/common_speech_recognition.mk
 
-
 # T-Mobile theme engine
 include vendor/tsm/products/themes_common.mk
 
@@ -58,7 +59,8 @@ PRODUCT_PACKAGES += \
     HoloSpiralWallpaper \
     LiveWallpapersPicker \
     NoiseField \
-    PhaseBeam
+    PhaseBeam \
+    Galaxy4
 
 #Inherit common packages for mako
 PRODUCT_PACKAGES += \
@@ -66,4 +68,3 @@ PRODUCT_PACKAGES += \
     Stk \
     Torch \
     clatd
-

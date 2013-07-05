@@ -66,7 +66,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/libWVphoneAPI.so:system/lib/libWVphoneAPI.so \
     vendor/tsm/proprietary/common/xbin/su:system/xbin/su\
     vendor/tsm/proprietary/common/lib/libplus_jni_v8.so:system/lib/libplus_jni_v8.so \
-    vendor/tsm/proprietary/common/lib/librs.antblur.so:system/lib/librs_antblur.so \
+    vendor/tsm/proprietary/common/lib/librs.antblur.so:system/lib/librs.antblur.so \
     vendor/tsm/proprietary/common/lib/librs.antblur_constant.so:system/lib/librs.antblur_constant.so \
     vendor/tsm/proprietary/common/lib/librs.antblur_drama.so:system/lib/librs.antblur_drama.so \
     vendor/tsm/proprietary/common/lib/librs.drama.so:system/lib/librs.drama.so \
@@ -77,7 +77,19 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/librs.retrolux.so:system/lib/librs.retrolux.so \
     vendor/tsm/proprietary/common/lib/librsjni.so:system/lib/librsjni.so \
     vendor/tsm/proprietary/common/lib/libRSSupport.so:system/lib/libRSSupport.so \
-    vendor/tsm/proprietary/common/lib/libwebp_android.so:system/lib/libwebp_android.so
+    vendor/tsm/proprietary/common/lib/libwebp_android.so:system/lib/libwebp_android.so \
+    vendor/tsm/proprietary/common/lib/libjpeg.so:system/lib/libjpeg.so \
+    vendor/tsm/proprietary/common/lib/librs.antblur_elliptical.so:system/lib/librs.antblur_elliptical.so \
+    vendor/tsm/proprietary/common/lib/librs.autocorrect.so:system/lib/librs.autocorrect.so\
+    vendor/tsm/proprietary/common/lib/librs.blackandwhite.so:system/lib/librs.blackandwhite.so \
+    vendor/tsm/proprietary/common/lib/librs.centerfocus.so:system/lib/librs.centerfocus.so \
+    vendor/tsm/proprietary/common/lib/librs.convolve3x3.so:system/lib/librs.covolve3x3.so \
+    vendor/tsm/proprietary/common/lib/librs.details.so:system/lib/librs.details.so \
+    vendor/tsm/proprietary/common/lib/librs.grunge.so:system/lib/librs.grunge.so \
+    vendor/tsm/proprietary/common/lib/librs.tiltandshift.so:system/lib/librs.tiltandshift.so \
+    vendor/tsm/proprietary/common/lib/librs.tuneimage.so:system/lib/librs.tuneimage.so \
+    vendor/tsm/proprietary/common/lib/librs.upoint.so:system/lib/librs.upoint.so \
+    vendor/tsm/proprietary/common/lib/librs.vintage.so:system/lib/librs.vintage.so
 
 
 # Blobs common to all devices except emulator

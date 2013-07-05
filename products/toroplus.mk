@@ -1,17 +1,12 @@
-# Inherit AOSP device configuration for toroplus.
-$(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
+## Specify phone tech before including full_phone
+#$(call inherit-product, vendor/tsm/products/cdma.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/tsm/products/common.mk)
 
-# Setup device specific product configuration.
-PRODUCT_NAME := tsm_toroplus
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := toroplus
-PRODUCT_MODEL := Galaxy Nexus
-PRODUCT_MANUFACTURER := samsung
+# Inherit AOSP device configuration for toroplus.
+$(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysidspr BUILD_FINGERPRINT=google/mysidspr/toroplus:4.2.1/JOP40D/L700FH05:user/release-keys PRIVATE_BUILD_DESC="mysidspr-user 4.2.1 JOP40D L700FH05 release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -22,10 +17,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.error.receiver.default=com.samsung.receiver.error \
     ro.com.google.locationfeatures=1 \
     ro.setupwizard.enterprise_mode=1 \
-    ro.com.google.gmsversion=4.2_r1 \
+    ro.com.google.gsmversion=4.2_r1 \
     ro.config.vc_call_vol_steps=7 \
     windowsmgr.max_events_per_sec=240
 
+# Setup device specific product configuration.
+PRODUCT_NAME := tsm_toroplus
+PRODUCT_BRAND := google
+PRODUCT_DEVICE := toroplus
+PRODUCT_MODEL := Galaxy Nexus
+PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=mysidspr BUILD_FINGERPRINT=google/mysidspr/toroplus:4.2.1/JOP40D/L700FH05:user/release-keys PRIVATE_BUILD_DESC="mysidspr-user 4.2.1 JOP40D L700FH05 release-keys"
 
 # Inherit common build.prop overrides
 -include vendor/tsm/products/common_versions.mk
