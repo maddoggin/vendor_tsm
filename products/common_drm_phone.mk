@@ -2,9 +2,8 @@
 PRODUCT_COPY_FILES +=  \
     vendor/tsm/proprietary/common/etc/permissions/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml \
     vendor/tsm/proprietary/common/framework/com.google.widevine.software.drm.jar:system/framework/com.google.widevine.software.drm.jar \
-    vendor/tsm/proprietary/common_drm/phone/lib/libfrsdk.so:system/lib/libfrsdk.so \
-    vendor/tsm/proprietary/common_drm/phone/vendor/etc/smc_normal_world_android_cfg.ini:system/vendor/etc/smc_normal_world_android_cfg.ini \
-    vendor/tsm/proprietary/common_drm/phone/vendor/firmware/smc_pa_wvdrm.ift:system/vendor/firmware/smc_pa_wvdrm.ift \
+    vendor/tsm/proprietary/common_drm/phone/vendor/lib/libfrsdk.so:system/vendor/lib/libfrsdk.so \
+    vendor/tsm/proprietary/common_drm/phone/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
     vendor/tsm/proprietary/common_drm/phone/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
     vendor/tsm/proprietary/common_drm/phone/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
     vendor/tsm/proprietary/common_drm/phone/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \

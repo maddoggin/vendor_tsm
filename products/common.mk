@@ -6,8 +6,20 @@ PRODUCT_DEVICE := generic
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/tsm/overlay/common
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    keyguard.no_require_sim=true \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.com.google.clientidbase=android-google \
+    ro.com.android.wifi-watchlist=GoogleGuest \
+    ro.error.receiver.system.apps=com.google.android.feedback \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    ro.com.android.dataroaming=false
+
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
+    vendor/tsm/proprietary/common/app/SunBeam.apk:system/app/SunBeam.apk \
     vendor/tsm/proprietary/common/app/Calendar.apk:system/app/Calendar.apk \
     vendor/tsm/proprietary/common/app/ChromeBookmarksSyncAdapter.apk:system/app/ChromeBookmarksSyncAdapter.apk \
     vendor/tsm/proprietary/common/app/Gmail.apk:system/app/Gmail.apk \
@@ -91,14 +103,20 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/librs.upoint.so:system/lib/librs.upoint.so \
     vendor/tsm/proprietary/common/lib/librs.vintage.so:system/lib/librs.vintage.so
 
-
+ifeq ($(TARGET_BUILD_VARIANT),user)
 # Blobs common to all devices except emulator
 PRODUCT_COPY_FILES += \
-    vendor/tsm/proprietary/common/app/GenieWidget.apk:system/app/GenieWidget.apk \
     vendor/tsm/proprietary/common/app/Music2.apk:system/app/Music2.apk \
     vendor/tsm/proprietary/common/app/Videos.apk:system/app/Videos.apk \
-    vendor/tsm/proprietary/common/app/YouTube.apk:system/app/YouTube.apk \
+    vendor/tsm/proprietary/common/app/YouTube.apk:system/app/YouTube.apk
+endif
+
+ifneq ($(filter mako toroplus,$(TARGET_PRODUCT)),)
+# Blobs common to all devices except emulator and tablets
+PRODUCT_COPY_FILES += \
+    vendor/tsm/proprietary/common/app/GenieWidget.apk:system/app/GenieWidget.apk \
     vendor/tsm/proprietary/common/app/SetupWizard.apk:system/app/SetupWizard.apk
+endif
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -110,9 +128,45 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/libnmsp_speex.so:system/lib/libnmsp_speex.so \
     vendor/tsm/proprietary/common/lib/libSwypeCore.so:system/lib/libSwypeCore.so
 
-ifneq ($(filter tsm_mako,$(TARGET_PRODUCT)),)
+#ifneq ($(filter mako,$(TARGET_PRODUCT)),)
 # Blobs common to Mako device
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/OccamQuickOffice.apk:system/app/OccamQuickOffice.apk
-endif
+#endif
+
+# userinit support
+PRODUCT_COPY_FILES += \
+    vendor/tsm/proprietary/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/tsm/proprietary/common/bin/sysinit:system/bin/sysinit
+
+# SELinux filesystem labels
+PRODUCT_COPY_FILES += \
+    vendor/tsm/proprietary/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+
+# Compcache/Zram support
+PRODUCT_COPY_FILES += \
+    vendor/tsm/proprietary/common/bin/compcache:system/bin/compcache \
+    vendor/tsm/proprietary/common/bin/handle_compcache:system/bin/handle_compcache
+
+# T-Mobile theme engine
+#include vendor/tsm/products/themes_common.mk
+
+# Required packages
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
+
+# Optional packages
+PRODUCT_PACKAGES += \
+    VideoEditor \
+    HoloSpiralWallpaper \
+    LiveWallpapersPicker \
+    NoiseField \
+    PhaseBeam \
+    Galaxy4
+
+#Inherit common packages for mako
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver \
+    Stk
 
