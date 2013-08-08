@@ -21,12 +21,12 @@
     <string name="def_backup_transport">com.google.android.backup/.BackupTransportService</string>
 
     <!-- percent -->
-    <!-- <integer name="def_battery_style">1</integer> -->
+    <integer name="def_battery_style">1</integer>
     <!-- Enable notification counters in statusbar -->
-    <!-- <integer name="def_notif_count">1</integer> -->
+    <integer name="def_notif_count">1</integer>
     <!-- Right QS pulldown -->
-    <!-- <integer name="def_qs_quick_pulldown">1</integer> -->
+    <integer name="def_qs_quick_pulldown">1</integer>
     <!-- Default lockscreen targets -->
-    <!-- <string name="def_lockscreen_targets">#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=EMPTY_LABEL;S.icon_resource=null;end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.android.mms/.ui.ConversationList;S.icon_resource=ic_lockscreen_sms_normal;end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=EMPTY_LABEL;S.icon_resource=null;end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.android.contacts/.activities.DialtactsActivity;S.icon_resource=ic_lockscreen_phone_normal;end</string> -->
+    <string name="def_lockscreen_targets">#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=null;S.icon_resource=null;end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.android.mms/.ui.ConversationList;S.icon_resource=ic_lockscreen_sms_normal;end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=null;S.icon_resource=null;end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.android.contacts/.activities.DialtactsActivity;S.icon_resource=ic_lockscreen_phone_normal;end</string>
 
 </resources>

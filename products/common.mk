@@ -20,8 +20,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/SunBeam.apk:system/app/SunBeam.apk \
-    vendor/tsm/proprietary/common/app/Calendar.apk:system/app/Calendar.apk \
+    vendor/tsm/proprietary/common/app/BrowserProviderProxy.apk:system/app/BrowserProviderProxy.apk \
+    vendor/tsm/proprietary/common/app/Calendar.apk:system/app/CalendarGoogle.apk \
     vendor/tsm/proprietary/common/app/ChromeBookmarksSyncAdapter.apk:system/app/ChromeBookmarksSyncAdapter.apk \
+    vendor/tsm/proprietary/common/app/ConfigUpdater.apk:system/app/ConfigUpdater.apk \
     vendor/tsm/proprietary/common/app/Gmail.apk:system/app/Gmail.apk \
     vendor/tsm/proprietary/common/app/GalleryGoogle.apk:system/app/GalleryGoogle.apk \
     vendor/tsm/proprietary/common/app/GoogleBackupTransport.apk:system/app/GoogleBackupTransport.apk \
@@ -38,7 +40,6 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/Maps.apk:system/app/Maps.apk \
     vendor/tsm/proprietary/common/app/MediaUploader.apk:system/app/MediaUploader.apk \
     vendor/tsm/proprietary/common/app/NetworkLocation.apk:system/app/NetworkLocation.apk \
-    vendor/tsm/proprietary/common/app/OneTimeInitializer.apk:system/app/OneTimeInitializer.apk \
     vendor/tsm/proprietary/common/app/Phonesky.apk:system/app/Phonesky.apk \
     vendor/tsm/proprietary/common/app/PlusOne.apk:system/app/PlusOne.apk \
     vendor/tsm/proprietary/common/app/pl.solidexplorer-2.apk:system/app/pl.solidexplorer-2.apk \
@@ -153,6 +154,7 @@ PRODUCT_COPY_FILES += \
 
 # Required packages
 PRODUCT_PACKAGES += \
+    Development \
     Superuser \
     su
 
@@ -168,5 +170,6 @@ PRODUCT_PACKAGES += \
 #Inherit common packages for mako
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
-    Stk
+    Stk \
+    Torch
 
