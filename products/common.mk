@@ -3,19 +3,24 @@ PRODUCT_NAME := tsm
 PRODUCT_BRAND := tsm
 PRODUCT_DEVICE := generic
 
-# Common overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/tsm/overlay/common
+-include vendor/cm-priv/keys.mk
+SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cm.superuser
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.error.receiver.system.apps=com.google.android.feedback \
     ro.com.google.clientidbase=android-google \
     ro.com.android.wifi-watchlist=GoogleGuest \
-    ro.error.receiver.system.apps=com.google.android.feedback \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1 \
+    persist.sys.root_access=1
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
@@ -34,6 +39,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/GooglePartnerSetup.apk:system/app/GooglePartnerSetup.apk \
     vendor/tsm/proprietary/common/app/GoogleServicesFramework.apk:system/app/GoogleServicesFramework.apk \
     vendor/tsm/proprietary/common/app/GoogleTTS.apk:system/app/GoogleTTS.apk \
+    vendor/tsm/proprietary/common/app/GoogleVoice.apk:system/app/GoogleVoice.apk \
     vendor/tsm/proprietary/common/app/GmsCore.apk:system/app/GmsCore.apk \
     vendor/tsm/proprietary/common/app/GoogleKeyboard.apk:system/app/GoogleKeyboard.apk \
     vendor/tsm/proprietary/common/app/LatinImeDictionaryPack.apk:system/app/LatinImeDictionaryPack.apk \
@@ -44,7 +50,6 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/PlusOne.apk:system/app/PlusOne.apk \
     vendor/tsm/proprietary/common/app/pl.solidexplorer-2.apk:system/app/pl.solidexplorer-2.apk \
     vendor/tsm/proprietary/common/app/Street.apk:system/app/Street.apk \
-    vendor/tsm/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
     vendor/tsm/proprietary/common/app/Talk.apk:system/app/Talk.apk \
     vendor/tsm/proprietary/common/app/Talkback.apk:system/app/Talkback.apk \
     vendor/tsm/proprietary/common/app/Velvet.apk:system/app/Velvet.apk \
@@ -77,7 +82,6 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/libvoicesearch.so:system/lib/libvoicesearch.so \
     vendor/tsm/proprietary/common/lib/libvorbisencoder.so:system/lib/libvorbisencoder.so \
     vendor/tsm/proprietary/common/lib/libWVphoneAPI.so:system/lib/libWVphoneAPI.so \
-    vendor/tsm/proprietary/common/xbin/su:system/xbin/su\
     vendor/tsm/proprietary/common/lib/libplus_jni_v8.so:system/lib/libplus_jni_v8.so \
     vendor/tsm/proprietary/common/lib/librs.antblur.so:system/lib/librs.antblur.so \
     vendor/tsm/proprietary/common/lib/librs.antblur_constant.so:system/lib/librs.antblur_constant.so \
@@ -91,18 +95,8 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/librsjni.so:system/lib/librsjni.so \
     vendor/tsm/proprietary/common/lib/libRSSupport.so:system/lib/libRSSupport.so \
     vendor/tsm/proprietary/common/lib/libwebp_android.so:system/lib/libwebp_android.so \
-    vendor/tsm/proprietary/common/lib/libjpeg.so:system/lib/libjpeg.so \
-    vendor/tsm/proprietary/common/lib/librs.antblur_elliptical.so:system/lib/librs.antblur_elliptical.so \
-    vendor/tsm/proprietary/common/lib/librs.autocorrect.so:system/lib/librs.autocorrect.so\
-    vendor/tsm/proprietary/common/lib/librs.blackandwhite.so:system/lib/librs.blackandwhite.so \
-    vendor/tsm/proprietary/common/lib/librs.centerfocus.so:system/lib/librs.centerfocus.so \
-    vendor/tsm/proprietary/common/lib/librs.convolve3x3.so:system/lib/librs.covolve3x3.so \
-    vendor/tsm/proprietary/common/lib/librs.details.so:system/lib/librs.details.so \
-    vendor/tsm/proprietary/common/lib/librs.grunge.so:system/lib/librs.grunge.so \
-    vendor/tsm/proprietary/common/lib/librs.tiltandshift.so:system/lib/librs.tiltandshift.so \
-    vendor/tsm/proprietary/common/lib/librs.tuneimage.so:system/lib/librs.tuneimage.so \
-    vendor/tsm/proprietary/common/lib/librs.upoint.so:system/lib/librs.upoint.so \
-    vendor/tsm/proprietary/common/lib/librs.vintage.so:system/lib/librs.vintage.so
+    vendor/tsm/proprietary/common/lib/libjpeg.so:system/lib/libjpeg.so
+
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
 # Blobs common to all devices except emulator
@@ -115,7 +109,6 @@ endif
 ifneq ($(filter mako toroplus,$(TARGET_PRODUCT)),)
 # Blobs common to all devices except emulator and tablets
 PRODUCT_COPY_FILES += \
-    vendor/tsm/proprietary/common/app/GenieWidget.apk:system/app/GenieWidget.apk \
     vendor/tsm/proprietary/common/app/SetupWizard.apk:system/app/SetupWizard.apk
 endif
 
@@ -144,13 +137,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
+# TSM-specific init file
+PRODUCT_COPY_FILES += \
+    vendor/tsm/proprietary/common/etc/init.local.rc:root/init.mad.rc
+
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/bin/compcache:system/bin/compcache \
     vendor/tsm/proprietary/common/bin/handle_compcache:system/bin/handle_compcache
 
 # T-Mobile theme engine
--include vendor/tsm/products/themes_common.mk
+#include vendor/tsm/products/themes_common.mk
 
 # Required packages
 PRODUCT_PACKAGES += \
@@ -160,16 +157,15 @@ PRODUCT_PACKAGES += \
 
 # Optional packages
 PRODUCT_PACKAGES += \
-    VideoEditor \
-    HoloSpiralWallpaper \
     LiveWallpapersPicker \
-    NoiseField \
-    PhaseBeam \
-    Galaxy4
+    PhaseBeam
 
 #Inherit common packages for mako
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
-    Stk \
-    Torch
+    Stk
 
+#PRODUCT_PACKAGE_OVERLAYS += vendor/tsm/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/tsm/overlay/common
+
+-include vendor/tsm/sepolicy/sepolicy.mk
