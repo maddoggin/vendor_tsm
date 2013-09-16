@@ -48,9 +48,9 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/NetworkLocation.apk:system/app/NetworkLocation.apk \
     vendor/tsm/proprietary/common/app/Phonesky.apk:system/app/Phonesky.apk \
     vendor/tsm/proprietary/common/app/PlusOne.apk:system/app/PlusOne.apk \
-    vendor/tsm/proprietary/common/app/pl.solidexplorer-2.apk:system/app/pl.solidexplorer-2.apk \
+    vendor/tsm/proprietary/common/app/pl.solidexplorer-1.apk:system/app/pl.solidexplorer-1.apk \
     vendor/tsm/proprietary/common/app/Street.apk:system/app/Street.apk \
-    vendor/tsm/proprietary/common/app/Talk.apk:system/app/Talk.apk \
+    vendor/tsm/proprietary/common/app/Hangouts.apk:system/app/Hangouts.apk \
     vendor/tsm/proprietary/common/app/Talkback.apk:system/app/Talkback.apk \
     vendor/tsm/proprietary/common/app/Velvet.apk:system/app/Velvet.apk \
     vendor/tsm/proprietary/common/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
@@ -122,11 +122,11 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/lib/libnmsp_speex.so:system/lib/libnmsp_speex.so \
     vendor/tsm/proprietary/common/lib/libSwypeCore.so:system/lib/libSwypeCore.so
 
-#ifneq ($(filter mako,$(TARGET_PRODUCT)),)
+ifneq ($(filter mako,$(TARGET_PRODUCT)),)
 # Blobs common to Mako device
-#PRODUCT_COPY_FILES += \
-    vendor/tsm/proprietary/common/app/OccamQuickOffice.apk:system/app/OccamQuickOffice.apk
-#endif
+PRODUCT_COPY_FILES += \
+    vendor/tsm/proprietary/common/app/com.teslacoilsw.launcher-1.apk:system/app/com.teslacoilsw.launcher-1.apk
+endif
 
 # userinit support
 PRODUCT_COPY_FILES += \

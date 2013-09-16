@@ -14,7 +14,7 @@ PRODUCT_DEVICE := mako
 PRODUCT_MODEL := Nexus 4
 PRODUCT_MANUFACTURER := LGE
 
-PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=occam BUILD_FINGERPRINT=google/occam/mako:4.3/JWR66N/711294:user/release-keys PRIVATE_BUILD_DESC="occam-user 4.3 JWR66N 711294 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=occam BUILD_FINGERPRINT=google/occam/mako:4.3/JWR66Y/776638:user/release-keys PRIVATE_BUILD_DESC="occam-user 4.3 JWR66Y 776638 release-keys"
 
 
 # Inherit common build.prop overrides
@@ -23,8 +23,7 @@ PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=occam BUILD_FINGERPRINT=google/occa
 # Copy mako specific prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/tsm/proprietary/mako/media/bootanimation.zip:system/media/bootanimation.zip \
-    vendor/tsm/proprietary/mako/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
-    vendor/tsm/proprietary/common/app/Wallet.apk:system/app/Wallet.apk
+    vendor/tsm/proprietary/mako/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3
 
 #Chrome app (updated 7-10-13)
 #PRODUCT_COPY_FILES +=  \
