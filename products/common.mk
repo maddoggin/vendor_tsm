@@ -18,7 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false
 
-PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1 \
     persist.sys.root_access=1
 
@@ -50,7 +50,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/PlusOne.apk:system/app/PlusOne.apk \
     vendor/tsm/proprietary/common/app/pl.solidexplorer-1.apk:system/app/pl.solidexplorer-1.apk \
     vendor/tsm/proprietary/common/app/Street.apk:system/app/Street.apk \
-    vendor/tsm/proprietary/common/app/Hangouts.apk:system/app/Hangouts.apk \
+    vendor/tsm/proprietary/common/app/Talk.apk:system/app/Talk.apk \
     vendor/tsm/proprietary/common/app/Talkback.apk:system/app/Talkback.apk \
     vendor/tsm/proprietary/common/app/Velvet.apk:system/app/Velvet.apk \
     vendor/tsm/proprietary/common/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
@@ -103,7 +103,8 @@ ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/app/Music2.apk:system/app/Music2.apk \
     vendor/tsm/proprietary/common/app/Videos.apk:system/app/Videos.apk \
-    vendor/tsm/proprietary/common/app/YouTube.apk:system/app/YouTube.apk
+    vendor/tsm/proprietary/common/app/YouTube.apk:system/app/YouTube.apk \
+    vendor/tsm/proprietary/common/app/Wallet.apk:system/app/Wallet.apk
 endif
 
 ifneq ($(filter mako toroplus,$(TARGET_PRODUCT)),)
@@ -134,7 +135,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # SELinux filesystem labels
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     vendor/tsm/proprietary/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # TSM-specific init file
@@ -168,4 +169,4 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGE_OVERLAYS += vendor/tsm/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/tsm/overlay/common
 
--include vendor/tsm/sepolicy/sepolicy.mk
+#include vendor/tsm/sepolicy/sepolicy.mk
