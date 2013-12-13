@@ -6,6 +6,7 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/app/CalendarGoogle.apk:system/app/CalendarGoogle.apk \
     vendor/tsm/prebuilt/app/CloudPrint2.apk:system/app/CloudPrint2.apk \
     vendor/tsm/prebuilt/app/Chrome.apk:system/app/Chrome.apk \
+    vendor/tsm/prebuilt/app/Drive.apk:system/app/Drive.apk \
     vendor/tsm/prebuilt/app/GalleryGoogle.apk:system/app/GalleryGoogle.apk \
     vendor/tsm/prebuilt/app/Gmail2.apk:system/app/Gmail2.apk \
     vendor/tsm/prebuilt/app/GoogleEars.apk:system/app/GoogleEars.apk \
@@ -52,6 +53,8 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/framework/com.google.android.maps.jar:system/framework/com.google.android.maps.jar \
     vendor/tsm/prebuilt/lib/libAppDataSearch.so:system/lib/libAppDataSearch.so \
     vendor/tsm/prebuilt/lib/libchromeview.so:system/lib/libchromeview.so \
+    vendor/tsm/prebuilt/lib/libdocscanner_image-v7a.so:system/lib/libdocscanner_image-v7a.so \
+    vendor/tsm/prebuilt/lib/libdocsimageutils.so:system/lib/libdocsimageutils.so \
     vendor/tsm/prebuilt/lib/libfacetracker.so:system/lib/libfacetracker.so \
     vendor/tsm/prebuilt/lib/libfilterframework_jni.so:system/lib/libfilterframework_jni.so \
     vendor/tsm/prebuilt/lib/libfilterpack_imageproc.so:system/lib/libfilterpack_imageproc.so \
@@ -81,10 +84,13 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so \
     vendor/tsm/prebuilt/lib/libjpeg.so:system/lib/libjpeg.so \
     vendor/tsm/prebuilt/lib/liblightcycle.so:system/lib/liblightcycle.so \
+    vendor/tsm/prebuilt/lib/liblinearalloc.so:system/lib/liblinearalloc.so \
     vendor/tsm/prebuilt/lib/libmoviemaker-jni.so:system/lib/libmoviemaker-jni.so \
     vendor/tsm/prebuilt/lib/libnativehelper_compat.so:system/lib/libnativehelper_compat.so \
+    vendor/tsm/prebuilt/lib/libndk1.so:system/lib/libndk1.so \
     vendor/tsm/prebuilt/lib/libpatts_engine_jni_api.so:system/lib/libpatts_engine_jni_api.so \
     vendor/tsm/prebuilt/lib/libplus_jni_v8.so:system/lib/libplus_jni_v8.so \
+    vendor/tsm/prebuilt/lib/librectifier-v7a.so:system/lib/librectifier-v7a.so \
     vendor/tsm/prebuilt/lib/librectifier-v7a.so:system/lib/librectifier-v7a.so \
     vendor/tsm/prebuilt/lib/librs.antblur.so:system/lib/librs.antblur.so \
     vendor/tsm/prebuilt/lib/librs.antblur_constant.so:system/lib/librs.antblur_constant.so \
