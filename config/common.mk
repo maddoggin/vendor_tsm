@@ -1,5 +1,7 @@
 PRODUCT_BRAND ?= custom
 PRODUCT_DEVICE := generic
+ROM_BUILDTYPE := RELEASE
+BUILD_DISPLAY_ID := $(BUILD_ID) $(BUILD_KEYS)
 
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.cm.superuser
@@ -8,6 +10,7 @@ SUPERUSER_PACKAGE_PREFIX := com.android.settings.cm.superuser
 PRODUCT_COPY_FILES += \
 	vendor/tsm/prebuilt/media/bootanimation.zip:system/media/bootanimation.zip
 
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # general properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -27,12 +30,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true
 
 # enable ADB authentication if not on eng build
-ifneq ($(TARGET_BUILD_VARIANT),eng)
+ifneq ($(TARGET_BUILD_VARIANT),user)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
 # Backup Tool
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/tsm/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/tsm/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
@@ -40,14 +43,13 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-	vendor/tsm/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
 	vendor/tsm/prebuilt/bin/sysinit:system/bin/sysinit
 
 # userinit support
 PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# Init script file with omni extras
+# Init script file with tsm extras
 PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/etc/init.local.rc:root/init.tsm.rc
 
@@ -57,9 +59,6 @@ PRODUCT_COPY_FILES += \
 
 # Versioning
 -include vendor/tsm/config/version.mk
-
-#include gsm apnlist
--include vendor/tsm/config/gsm.mk
 
 #include gapps
 -include vendor/tsm/config/packages.mk

@@ -1,18 +1,19 @@
 # Additional packages
 PRODUCT_PACKAGES += \
-	Development \
 	Superuser \
 	su
 
 
 # Additional apps
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
 	DSPManager \
 	libcyanogen-dsp \
 	audio_effects.conf
 
 PRODUCT_PACKAGES += \
-	CellBroadcastReceiver
+	CellBroadcastReceiver \
+	Stk
+
 
 # Additional tools
 PRODUCT_PACKAGES += \

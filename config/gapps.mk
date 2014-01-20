@@ -21,7 +21,6 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/app/MediaUploader.apk:system/app/MediaUploader.apk \
     vendor/tsm/prebuilt/app/Music2.apk:system/app/Music2.apk \
     vendor/tsm/prebuilt/app/Newsstand.apk:system/app/Newsstand.apk \
-    vendor/tsm/prebuilt/app/PartnerBookmarksProvider.apk:system/app/PartnerBookmarksProvider.apk \
     vendor/tsm/prebuilt/app/PlusOne.apk:system/app/PlusOne.apk \
     vendor/tsm/prebuilt/app/Street.apk:system/app/Street.apk \
     vendor/tsm/prebuilt/app/Videos.apk:system/app/Videos.apk \
@@ -57,7 +56,6 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/lib/libdocsimageutils.so:system/lib/libdocsimageutils.so \
     vendor/tsm/prebuilt/lib/libfacetracker.so:system/lib/libfacetracker.so \
     vendor/tsm/prebuilt/lib/libfilterframework_jni.so:system/lib/libfilterframework_jni.so \
-    vendor/tsm/prebuilt/lib/libfilterpack_imageproc.so:system/lib/libfilterpack_imageproc.so \
     vendor/tsm/prebuilt/lib/libgames_rtmp_jni.so:system/lib/libgames_rtmp_jni.so \
     vendor/tsm/prebuilt/lib/libgcam.so:system/lib/libgcam.so \
     vendor/tsm/prebuilt/lib/libgcam_swig_jni.so:system/lib/libgcam_swig_jni.so \
@@ -70,22 +68,20 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/lib/libioshpmpcups.so:system/lib/libioshpmpcups.so \
     vendor/tsm/prebuilt/lib/libioshpmpcurl.so:system/lib/libioshpmpcurl.so \
     vendor/tsm/prebuilt/lib/libioshpmpexpat.so:system/lib/libioshpmpexpat.so \
-    vendor/tsm/prebuilt/lib/libioshpmp_jpeg.so:system/lib/libioshpmp_jpeg.so \
-    vendor/tsm/prebuilt/lib/libioshpmp_png.so:system/lib/libioshpmp_png.so \
-    vendor/tsm/prebuilt/lib/libioshpmpReaderEngine.so:system/lib/libioshpmpReaderEngine.so \
+    vendor/tsm/prebuilt/lib/libioshpmpjpeg.so:system/lib/libioshpmpjpeg.so \
+    vendor/tsm/prebuilt/lib/libioshpmpmupdf.so:system/lib/libioshpmpmupdf.so \
     vendor/tsm/prebuilt/lib/libioshpmpssl.so:system/lib/libioshpmpssl.so \
     vendor/tsm/prebuilt/lib/libioshpmpSupport.so:system/lib/libioshpmpSupport.so \
-    vendor/tsm/prebuilt/lib/libioshpmpViewBridge.so:system/lib/libioshpmpViewBridge.so \
     vendor/tsm/prebuilt/lib/libjni_eglfence.so:system/lib/libjni_eglfence.so \
     vendor/tsm/prebuilt/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
     vendor/tsm/prebuilt/lib/libjni_googlepinyinime_5.so:system/lib/libjni_googlepinyinime_5.so \
     vendor/tsm/prebuilt/lib/libjni_googlepinyinime_latinime_5.so:system/lib/libjni_googlepinyinime_latinime_5.so \
     vendor/tsm/prebuilt/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
     vendor/tsm/prebuilt/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so \
-    vendor/tsm/prebuilt/lib/libjpeg.so:system/lib/libjpeg.so \
     vendor/tsm/prebuilt/lib/liblightcycle.so:system/lib/liblightcycle.so \
     vendor/tsm/prebuilt/lib/liblinearalloc.so:system/lib/liblinearalloc.so \
     vendor/tsm/prebuilt/lib/libmoviemaker-jni.so:system/lib/libmoviemaker-jni.so \
+    vendor/tsm/prebuilt/lib/libnetjni.so:system/lib/libnetjni.so \
     vendor/tsm/prebuilt/lib/libnativehelper_compat.so:system/lib/libnativehelper_compat.so \
     vendor/tsm/prebuilt/lib/libndk1.so:system/lib/libndk1.so \
     vendor/tsm/prebuilt/lib/libpatts_engine_jni_api.so:system/lib/libpatts_engine_jni_api.so \
@@ -102,8 +98,6 @@ PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/lib/librs.image_wrapper.so:system/lib/librs.image_wrapper.so \
     vendor/tsm/prebuilt/lib/librs.retrolux.so:system/lib/librs.retrolux.so \
     vendor/tsm/prebuilt/lib/librsjni.so:system/lib/librsjni.so \
-    vendor/tsm/prebuilt/lib/libRSSupport.so:system/lib/libRSSupport.so \
-    vendor/tsm/prebuilt/lib/libspeexresampler.so:system/lib/libspeexresampler.so \
     vendor/tsm/prebuilt/lib/libspeexwrapper.so:system/lib/libspeexwrapper.so \
     vendor/tsm/prebuilt/lib/libvcdecoder_jni.so:system/lib/libvcdecoder_jni.so \
     vendor/tsm/prebuilt/lib/libvideochat_jni.so:system/lib/libvideochat_jni.so \
