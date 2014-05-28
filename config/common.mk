@@ -1,7 +1,5 @@
 PRODUCT_BRAND ?= custom
 PRODUCT_DEVICE := generic
-ROM_BUILDTYPE := RELEASE
-BUILD_DISPLAY_ID := $(BUILD_ID) $(BUILD_KEYS)
 
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.cm.superuser
@@ -35,7 +33,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
 # Backup Tool
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/tsm/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/tsm/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
@@ -53,15 +51,27 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/tsm/prebuilt/etc/init.local.rc:root/init.tsm.rc
 
+# Compcache/Zram support
+PRODUCT_COPY_FILES += \
+    vendor/tsm/prebuilt/bin/compcache:system/bin/compcache \
+    vendor/tsm/prebuilt/bin/handle_compcache:system/bin/handle_compcache
+
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# Additional packages
+PRODUCT_PACKAGES += \
+	Superuser \
+	CellBroadcastReceiver \
+	Development \
+	su
+
+#include gapps
+-include vendor/tsm/config/common_media_effects.mk
+
 # Versioning
 -include vendor/tsm/config/version.mk
 
-#include gapps
--include vendor/tsm/config/packages.mk
-
-# Add our overlays
+# Add overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/tsm/overlay/common
